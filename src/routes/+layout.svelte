@@ -1,7 +1,26 @@
 <script lang="ts">
   import '../app.css';
 
+  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Sidebar from '$lib/components/Sidebar.svelte';
+
   let { children } = $props();
 </script>
 
-{@render children?.()}
+<div class="flex h-screen items-center justify-center">
+  <div
+    class="m-4 grid h-180 w-7xl grid-cols-[auto_1fr] grid-rows-[auto_1fr_auto] gap-4 border-2 border-solid p-4"
+  >
+    <div class="col-span-2">
+      <Header />
+    </div>
+    <Sidebar />
+    <main class="border-2 border-solid">
+      {@render children?.()}
+    </main>
+    <div class="col-span-2">
+      <Footer />
+    </div>
+  </div>
+</div>
