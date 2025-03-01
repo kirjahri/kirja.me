@@ -5,4 +5,4 @@
   export let href: string;
 </script>
 
-<li><a {href} {target}>{content}</a></li>
+<li class="m-4"><a {href} {target} class="block w-64">{content}</a></li>
