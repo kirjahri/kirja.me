@@ -5,7 +5,13 @@ import { sveltePreprocess } from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: [vitePreprocess(), mdsvex(), sveltePreprocess()],
+  preprocess: [
+    vitePreprocess(),
+    mdsvex(),
+    sveltePreprocess({
+      postcss: true,
+    }),
+  ],
   kit: {
     adapter: adapter({
       fallback: 'not_found.html',
